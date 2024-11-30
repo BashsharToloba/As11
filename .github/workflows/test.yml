@@ -22,8 +22,15 @@ jobs:
       # Step 3: Run test cases
       - name: Run Test Cases
         run: |
-          # Test 1
-          cp test_data/test1_input.txt test_data/numbers.txt
+          # Test 1         
           python3 find_lowest_number.py test_data/numbers.txt output1.txt
           diff output1.txt test_data/test1_expected.txt
+
+           # Test 2        
+          python3 find_lowest_number.py test_data/numbers.txt output2.txt
+          diff output2.txt test_data/test2_expected.txt
+
+          # Test 3
+          python3 find_lowest_number.py test_data/numbers.txt output3.txt
+          diff output3.txt test_data/test3_expected.txt
          
