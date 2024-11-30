@@ -1,0 +1,29 @@
+name: Test find_lowest_number.py
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-find-lowest:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Step 3: Run test cases
+      - name: Run Test Cases
+        run: |
+          # Test 1
+          cp test_data/test1_input.txt test_data/numbers.txt
+          python3 find_lowest_number.py test_data/numbers.txt output1.txt
+          diff output1.txt test_data/test1_expected.txt
+         
