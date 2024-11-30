@@ -23,7 +23,7 @@ jobs:
       - name: Run Test Cases
         run: |
           # Test 1         
-          python3 find_lowest_number.py test_data/numbers.txt output1.txt
+          python3 find_lowest_number.py test_data/test1_input.txt output1.txt
           diff output1.txt test_data/test1_expected.txt
 
            # Test 2        
